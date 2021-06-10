@@ -142,3 +142,6 @@ catkin_install_python(
     src/${PROJECT_NAME}/map2odom_publisher.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
+add_executable(map_saver src/hdl_graph_slam/map_saver.cpp)
+target_link_libraries(map_saver ${catkin_LIBRARIES})
