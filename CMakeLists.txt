@@ -145,3 +145,14 @@ catkin_install_python(
 
 add_executable(map_saver src/hdl_graph_slam/map_saver.cpp)
 target_link_libraries(map_saver ${catkin_LIBRARIES})
+
+install(FILES nodelet_plugins.xml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+install(TARGETS
+  prefiltering_nodelet 
+  floor_detection_nodelet
+  scan_matching_odometry_nodelet 
+  hdl_graph_slam_nodelet
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
